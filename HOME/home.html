@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samata Hospital | Your Health, Our Priority</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="/assets/samata_logo.png" alt="Samata Hospital Logo">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+                <li class="nav-item dropdown">
+    <a href="#" class="nav-link">Our Specialities <i class="fas fa-chevron-down"></i></a>
+    
+    <ul class="dropdown-menu two-column">
+        <div class="col">
+            <li><a href="#">General Medicine</a></li>
+            <li><a href="#">Orthopaedic Surgery (Including Joint Replacement)</a></li>
+            <li><a href="#">Obstetrics and Gynecology</a></li>
+            <li><a href="#">Psychiatry</a></li>
+            <li><a href="#">Paediatrics</a></li>
+            <li><a href="#">Neurology</a></li>
+            <li><a href="#">Respiratory Medicine</a></li>
+            <li><a href="#">Ultrasound</a></li>
+        </div>
+
+        <div class="col">
+            <li><a href="#">General Surgery including Laparoscopy Surgery</a></li>
+            <li><a href="#">ENT</a></li>
+            <li><a href="#">Neurosurgery</a></li>
+            <li><a href="#">Dermatology and Venereology</a></li>
+            <li><a href="#">Urology</a></li>
+            <li><a href="#">Cardiology</a></li>
+            <li><a href="#">Plastic and Reconstructive Surgery</a></li>
+        </div>
+    </ul>
+</li>
+
+                <li class="nav-item"><a href="#" class="nav-link">Doctors</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#" class="btn btn-purple"><i class="far fa-calendar-check"></i> Book Appointment</a>
+                <a href="#" class="btn btn-orange"><i class="fas fa-phone-alt fa-flip-horizontal"></i> Emergency</a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="blur-circle"></div>
+
+        <div class="container hero-container">
+            <div class="hero-text">
+                <div class="slider-content" id="slider-text">
+                    <h1 class="anim-text">Your Health, <br><span class="highlight">Our Priority</span></h1>
+                    <p class="sub-headline anim-text">Compassionate Care, Advanced Treatment</p>
+                    <p class="description anim-text">
+                        Experience world-class healthcare with compassionate professionals dedicated to your well-being. We are equipped with state-of-the-art technology to serve you better.
+                    </p>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="#" class="btn btn-purple-lg">
+                        <i class="far fa-calendar-check"></i> Book Appointment <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline">
+                        <i class="fas fa-phone-alt fa-flip-horizontal"></i> Emergency Call
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>Emergency Care</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p>Expert Doctors</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>15+</h3>
+                        <p>Specialities</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image-wrapper">
+                <div class="image-container">
+    <!-- Hero slider images: change ONLY these src values in HTML -->
+    <img src="/assets/slide1.jpg" alt="Hospital Interior 1" class="hero-img-slide anim-img active">
+    <img src="/assets/slide2.jpg" alt="Hospital Interior 2" class="hero-img-slide anim-img">
+    <img src="/assets/slide3.jpg" alt="Hospital Interior 3" class="hero-img-slide anim-img">
+</div>
+
+                
+                <div class="floating-card">
+                    <div class="icon-box">
+                        <i class="fas fa-phone-alt fa-flip-horizontal"></i>
+                    </div>
+                    <div class="card-text">
+                        <span>24/7 Helpline</span>
+                        <strong>+91 98765 43210</strong>
+                    </div>
+                </div>
+
+                <button class="slider-btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <script src="script.js"></script>
+</body>
+</html>
