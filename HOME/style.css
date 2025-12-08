@@ -712,3 +712,292 @@ ul {
     font-size: 28px;
   }
 }
+/* --- Specialities Section Styles --- */
+.specialities-section {
+  padding: 80px 0;
+  background-color: var(--white);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.section-title .purple-highlight {
+  color: var(--primary-purple);
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: var(--text-gray);
+  font-weight: 400;
+}
+
+/* Specialities Grid Layout */
+.specialities-grid {
+  display: grid;
+  /* Create three columns with equal width */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* --- Specialities Section Styles --- */
+/* (Keep the section-header styles as they were) */
+
+/* Specialities Grid Layout */
+.specialities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Individual Card Styling */
+.speciality-card {
+  background-color: var(--white);
+  /* Initial border is light gray */
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  text-align: left;
+  height: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  position: relative;
+
+  /* IMPORTANT: Fallback definition for the custom hover variable */
+  --hover-color: var(--primary-purple);
+}
+
+/* Hover Effect: Uses the custom variable defined IN THE HTML CARD */
+.speciality-card:hover {
+  transform: translateY(-5px);
+  /* This line reads the color from the HTML style attribute: --hover-color 🛑 */
+  border-color: var(--hover-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Keep shadow subtle */
+}
+
+/* Optional: Make the text inside the card match the accent color on hover */
+.speciality-card:hover h3 {
+  color: var(--hover-color);
+}
+
+/* Icon Box Styling - NO CHANGE NEEDED HERE */
+.card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+
+  /* Uses CSS Variables defined in the HTML card-icon style attribute */
+  background-color: var(--bg-color);
+  color: var(--icon-color);
+}
+
+.speciality-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.speciality-card p {
+  font-size: 15px;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+/* --- Expert Doctors Section Styles --- */
+
+.doctors-section {
+  padding: 80px 0;
+  /* Uses the light gradient background or solid white */
+  background-color: var(--white);
+}
+
+/* Style for the orange highlight in the H2 title */
+.orange-highlight-h2 {
+  color: var(--primary-orange);
+}
+
+/* Doctors Grid Layout */
+.doctors-grid {
+  display: grid;
+  /* Four equal columns */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* Individual Doctor Card Styling */
+.doctor-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.doctor-photo-wrapper {
+  width: 100%;
+  /* Aspect ratio for the photo (e.g., 3:4) */
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  background-color: #f0f0f0;
+}
+
+.doctor-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Optional subtle hover effect */
+  transition: transform 0.3s ease;
+}
+.doctor-card:hover .doctor-photo {
+  transform: scale(1.03);
+}
+
+/* Doctor Info Area (Below the photo) */
+.doctor-info {
+  padding: 20px;
+}
+
+.doctor-info h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.doctor-speciality {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Text Colors (Based on Card Theme) */
+.purple-text {
+  color: var(--primary-purple);
+}
+.orange-text {
+  color: var(--primary-orange);
+}
+
+/* Doctor Details List (Education/Experience) */
+.doctor-details {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed #e0e0e0;
+}
+
+.doctor-details li {
+  font-size: 14px;
+  color: var(--text-gray);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.doctor-details i {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+/* Footer CTA */
+.doctors-cta-footer {
+  text-align: center;
+}
+/* --- NEW: Specific Icon & Text Colors for Doctor Details (Final Theme) --- */
+
+/* 1. Graduation Cap Icon Color (Accent Blue - Sky Blue) */
+.icon-grad {
+  color: var(--accent-blue); /* #29abe2 */
+}
+
+/* 2. Experience Briefcase Icon Color (Primary Orange) */
+.icon-exp {
+  color: var(--primary-orange); /* #f37b21 */
+}
+
+/* 3. Identification Text Color (Subtle Light Gray/Premium) */
+.text-subtle {
+  color: var(--text-gray); /* #666666 (Your subtle text color) */
+}
+
+/* --- Adjusted Doctor Details Styles (REPLACE THE OLD BLOCK) --- */
+
+/* Doctor Details List (Education/Experience) */
+.doctor-details {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed #e0e0e0;
+}
+
+.doctor-details li {
+  font-size: 14px;
+  /* Reset the color so the span.text-subtle controls the text color */
+  color: initial;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.doctor-details i {
+  /* Set icon size to be subtle */
+  font-size: 14px;
+  margin-right: 8px;
+  /* Color is controlled by .icon-grad and .icon-exp classes */
+}
+
+/* Ensure the Section Header uses the colors from the image */
+.doctors-section .section-title {
+  color: var(--text-dark);
+  font-weight: 800;
+}
+.doctors-section .orange-highlight-h2 {
+  color: var(--primary-orange);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1200px) {
+  .doctors-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on smaller desktops */
+  }
+}
+
+@media (max-width: 768px) {
+  .doctors-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctors-grid {
+    grid-template-columns: 1fr; /* Single column on phones */
+  }
+  .doctor-photo-wrapper {
+    height: 350px; /* Taller photo on mobile */
+  }
+}
