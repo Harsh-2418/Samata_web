@@ -1,7 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  /* =========================================
-     1. NAVBAR & DROPDOWN LOGIC
-     ========================================= */
   const mobileMenuBtn = document.getElementById("mobile-menu");
   const navMenu = document.querySelector(".nav-menu");
   const navbar = document.querySelector(".navbar");
@@ -15,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Close mobile menu when a link (not dropdown) is clicked
   document.querySelectorAll(".nav-link:not(.dropdown-toggle)").forEach((n) =>
     n.addEventListener("click", () => {
       if (mobileMenuBtn) mobileMenuBtn.classList.remove("active");
@@ -23,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   );
 
-  // Navbar Background Scroll Effect
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
       navbar.classList.add("scrolled");
@@ -32,31 +27,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // FIXED: Mobile Dropdown Toggle
   const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
 
   dropdownToggles.forEach((toggle) => {
     toggle.addEventListener("click", (e) => {
-      // Check if screen is mobile/tablet size
       if (window.innerWidth <= 992) {
-        e.preventDefault(); // Stop the link from jumping to top
+        e.preventDefault(); 
         
         const parentDropdown = toggle.closest(".dropdown");
         
-        // Optional: Close other dropdowns if you have multiple
         document.querySelectorAll(".dropdown").forEach((d) => {
           if (d !== parentDropdown) {
             d.classList.remove("active");
           }
         });
 
-        // Toggle the clicked dropdown
         parentDropdown.classList.toggle("active");
       }
     });
   });
 
-  // Reset menu on resize
   window.addEventListener("resize", () => {
     if (window.innerWidth > 992) {
       if (navMenu) navMenu.classList.remove("active");
@@ -65,9 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* =========================================
-     2. HERO SLIDER LOGIC
-     ========================================= */
+  /* === 2. HERO SLIDER LOGIC === */
   const slides = [
     {
       title: 'Your Health, <br><span class="highlight">Our Priority</span>',
@@ -92,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const sliderTextContainer = document.getElementById("slider-text");
 
-  // Only run slider logic if element exists
   if (sliderTextContainer) {
     const h1 = sliderTextContainer.querySelector("h1");
     const sub = sliderTextContainer.querySelector(".sub-headline");
@@ -194,5 +181,62 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     updateHeroImage();
     startTimer();
+  }
+});
+/* =========================================
+   Testimonial Slider Logic
+   ========================================= */
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".testimonial-slide");
+  const nextBtn = document.getElementById("testNext");
+  const prevBtn = document.getElementById("testPrev");
+  const dotsContainer = document.getElementById("testDots");
+  
+  let currentSlide = 0;
+  const totalSlides = slides.length;
+
+  // Initialize Dots
+  slides.forEach((_, index) => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (index === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => goToSlide(index));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll(".dot");
+
+  function updateSlides() {
+    // Remove active class from all
+    slides.forEach((slide) => slide.classList.remove("active"));
+    dots.forEach((dot) => dot.classList.remove("active"));
+
+    // Add active class to current
+    slides[currentSlide].classList.add("active");
+    dots[currentSlide].classList.add("active");
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlides();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateSlides();
+  }
+
+  function goToSlide(index) {
+    currentSlide = index;
+    updateSlides();
+  }
+
+  // Event Listeners
+  if(nextBtn && prevBtn) {
+      nextBtn.addEventListener("click", nextSlide);
+      prevBtn.addEventListener("click", prevSlide);
+  
+      // Auto Play (Optional - 5 seconds)
+      setInterval(nextSlide, 5000);
   }
 });
