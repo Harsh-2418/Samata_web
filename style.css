@@ -231,6 +231,36 @@ ul {
   transition: all 0.3s ease-in-out;
 }
 
+/* Mobile / Tablet View adjustments */
+@media screen and (max-width: 992px) {
+  
+  /* Reset the dropdown positioning for the sidebar */
+  .dropdown-menu {
+    position: relative; /* Makes it stack vertically instead of floating */
+    top: 0;
+    left: 0;
+    width: 100%; /* Fits inside the sidebar */
+    transform: none; /* KEY FIX: Stops it from shifting left */
+    box-shadow: none; /* Optional: cleaner look in sidebar */
+    background: #f9f9f9; /* Optional: slight contrast */
+    padding: 10px 0;
+    visibility: visible; /* Ensure visibility logic handles correctly */
+    opacity: 1; /* Ensure opacity logic handles correctly */
+  }
+
+  /* Make the items 1 column instead of 2 for better readability */
+  .dropdown-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  /* Adjust item padding for sidebar look */
+  .dropdown-item {
+    padding-left: 20px;
+    font-size: 14px;
+  }
+}
+
 /* =========================================
    REST OF THE PAGE STYLES (Existing)
    ========================================= */
