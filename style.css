@@ -231,33 +231,41 @@ ul {
   transition: all 0.3s ease-in-out;
 }
 
-/* Mobile / Tablet View adjustments */
+/* --- PASTE THIS AT THE VERY BOTTOM OF YOUR CSS FILE --- */
+
 @media screen and (max-width: 992px) {
   
-  /* Reset the dropdown positioning for the sidebar */
+  /* 1. Force the menu to fit the sidebar width */
   .dropdown-menu {
-    position: relative; /* Makes it stack vertically instead of floating */
-    top: 0;
-    left: 0;
-    width: 100%; /* Fits inside the sidebar */
-    transform: none; /* KEY FIX: Stops it from shifting left */
-    box-shadow: none; /* Optional: cleaner look in sidebar */
-    background: #f9f9f9; /* Optional: slight contrast */
-    padding: 10px 0;
-    visibility: visible; /* Ensure visibility logic handles correctly */
-    opacity: 1; /* Ensure opacity logic handles correctly */
+    width: 100% !important;        /* Overrides 600px width */
+    position: relative !important; /* Stacks it naturally in the list */
+    left: 0 !important;            /* Resets the 50% push */
+    top: 0 !important;
+    transform: none !important;    /* CRITICAL: Stops the left shift */
+    opacity: 1 !important;         /* Force visible for debugging */
+    visibility: visible !important;
+    box-shadow: none !important;
+    padding-left: 0 !important;
   }
 
-  /* Make the items 1 column instead of 2 for better readability */
-  .dropdown-grid {
-    grid-template-columns: 1fr;
-    gap: 0;
+  /* 2. CRITICAL: Override the hover animation explicitly */
+  /* This was likely causing the issue when you clicked/tapped */
+  .dropdown:hover .dropdown-menu {
+    transform: none !important; 
+    top: 0 !important;
   }
-  
-  /* Adjust item padding for sidebar look */
+
+  /* 3. Make the items a single vertical list */
+  .dropdown-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  /* 4. styling tweaks for the sidebar look */
   .dropdown-item {
-    padding-left: 20px;
-    font-size: 14px;
+    white-space: normal; /* Allows long text to wrap */
+    padding: 10px 15px 10px 30px !important; /* Indent sub-items */
+    border-left: none !important;
   }
 }
 
