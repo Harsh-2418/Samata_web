@@ -653,9 +653,10 @@ ul {
 }
 
 /* --- Specialities Section --- */
+/* --- Specialities Section --- */
 .specialities-section {
   padding: 80px 0;
-  background-color: #f9f9f9; /* Slight bg distinction */
+  background-color: #f9f9f9;
 }
 
 .section-header {
@@ -683,12 +684,18 @@ ul {
   font-weight: 400;
 }
 
+/* -----------------------------
+   GRID UPDATED TO 4 COLUMNS
+------------------------------ */
 .specialities-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
+/* -----------------------------
+   CARDS – ALL PURPLE THEME
+------------------------------ */
 .speciality-card {
   background-color: var(--white);
   border: 1px solid #e0e0e0;
@@ -721,8 +728,8 @@ ul {
   align-items: center;
   font-size: 24px;
   margin-bottom: 20px;
-  background-color: var(--bg-color);
-  color: var(--icon-color);
+  background-color: #f3eafd; /* Purple-tinted background */
+  color: var(--primary-purple); /* Purple icon */
 }
 
 .speciality-card h3 {
@@ -736,6 +743,31 @@ ul {
   font-size: 15px;
   color: var(--text-gray);
   line-height: 1.6;
+}
+
+/* -----------------------------
+   RESPONSIVE FIXES
+------------------------------ */
+
+/* Tablets (3 columns) */
+@media (max-width: 992px) {
+  .specialities-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile Large (2 columns) */
+@media (max-width: 768px) {
+  .specialities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Small (1 column) */
+@media (max-width: 480px) {
+  .specialities-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* --- Expert Doctors Section --- */
@@ -783,6 +815,7 @@ ul {
   display: block;
   transition: transform 0.3s ease;
 }
+
 .doctor-card:hover .doctor-photo {
   transform: scale(1.03);
 }
@@ -828,19 +861,56 @@ ul {
   margin-right: 8px;
 }
 
-.doctors-cta-footer {
-  text-align: center;
-}
-
 .icon-grad {
   color: var(--accent-blue);
 }
+
 .icon-exp {
   color: var(--primary-orange);
 }
+
 .text-subtle {
   color: var(--text-gray);
 }
+
+/* --- CTA Footer (Center Button) --- */
+.doctors-cta-footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* --- Purple View All Doctors Button --- */
+.btn-purple-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 26px;
+  background-color: var(--primary-purple);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(130, 82, 255, 0.25);
+  margin: 0 auto; /* Ensures centering */
+}
+
+.btn-purple-link:hover {
+  background-color: #6a32ff; /* Darker purple on hover */
+  box-shadow: 0 6px 20px rgba(130, 82, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-purple-link i {
+  transition: transform 0.3s ease;
+}
+
+.btn-purple-link:hover i {
+  transform: translateX(4px);
+}
+
 
 /* =========================================
    MEDIA QUERIES
